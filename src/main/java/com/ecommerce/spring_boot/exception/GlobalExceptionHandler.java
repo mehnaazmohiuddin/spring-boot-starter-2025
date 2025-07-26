@@ -12,6 +12,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(InvalidCredentialsException.class)
     public ResponseEntity<?> handleInvalidCredentials(InvalidCredentialsException ex) {
+        System.out.println("Coming from Global Error Handler tell its a InvalidCredentialsException");
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
                 .body(Map.of("error", ex.getMessage()));
     }

@@ -4,10 +4,12 @@ package com.ecommerce.spring_boot.controller;
 
 import com.ecommerce.spring_boot.authentication.AuthenticationService;
 import com.ecommerce.spring_boot.config.security.config.JwtUtil;
+import jakarta.annotation.security.RolesAllowed;
 import model.LoginRequest;
 import model.LoginResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -24,10 +26,8 @@ public class UserController {
               authenticationService.authenticate(request);
       return ResponseEntity.ok(loginResponse);
     }
-
-    @GetMapping("/")
+    @PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")    @GetMapping("/")
     public String index() {
-
         return "Greetings from Spring Boot!";
     }
 
