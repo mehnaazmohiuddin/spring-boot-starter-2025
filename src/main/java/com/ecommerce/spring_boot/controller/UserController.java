@@ -26,7 +26,8 @@ public class UserController {
               authenticationService.authenticate(request);
       return ResponseEntity.ok(loginResponse);
     }
-    @PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")    @GetMapping("/")
+    @PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
+    @GetMapping("/")
     public String index() {
         return "Greetings from Spring Boot!";
     }
