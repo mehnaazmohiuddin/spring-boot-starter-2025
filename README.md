@@ -120,3 +120,17 @@ This project is based on **Spring Boot 3.x+** and works with **Java 21+**, follo
 - Use `@ConfigurationProperties` for cleaner config
 - Extend roles logic (`@RequiresAnyRole`, multiple roles)
 - Add global exception handler for JWT errors
+
+
+
+Adding Dockerization . 
+added DockerFile 
+added docker-compose.yaml 
+
+adding it to dockerhub so that k8s can see it. his
+```bash
+docker build -t myapp:latest 
+docker tag myapp:latest mehnaaz/myapp:latest
+docker push myapp:latest mehnaaz/myapp:latest
+docker push  mehnaaz/myapp:latest
+```
