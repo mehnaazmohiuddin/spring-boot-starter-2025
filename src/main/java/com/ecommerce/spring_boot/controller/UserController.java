@@ -1,10 +1,8 @@
 package com.ecommerce.spring_boot.controller;
 
 
-
 import com.ecommerce.spring_boot.authentication.AuthenticationService;
 import com.ecommerce.spring_boot.config.security.config.JwtUtil;
-import jakarta.annotation.security.RolesAllowed;
 import model.LoginRequest;
 import model.LoginResponse;
 import org.springframework.beans.factory.annotation.Autowired;
